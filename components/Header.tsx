@@ -12,8 +12,7 @@ const Header: React.FC = () => {
       <div className="relative z-10">
         <div className="flex items-center mb-6">
           <div className="h-1 bg-blue-400 w-12 rounded-full mr-3"></div>
-          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-200">Official Sales Partner</span>
-        </div>
+            </div>
         
         <h1 className="text-4xl font-extrabold mb-1 tracking-tight leading-none">{CARD_DETAILS.name}</h1>
         <p className="text-blue-300 font-bold text-lg mb-4 opacity-90">{CARD_DETAILS.designation}</p>
