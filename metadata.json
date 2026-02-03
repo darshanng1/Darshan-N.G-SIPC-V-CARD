@@ -1,0 +1,7 @@
+{
+  "name": "Darshan N G - Digital V-Card",
+  "description": "A professional digital business card for Darshan N G, Sr. Business Development at Secure India Pest Control Pvt Ltd (SIPC), designed for sales coordination and instant contact.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
