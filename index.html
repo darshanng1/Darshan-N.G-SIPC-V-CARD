@@ -16,17 +16,19 @@
       }
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #FFFFFF;
+        background-color: #F8FAFC;
         margin: 0;
         padding: 0;
         -webkit-font-smoothing: antialiased;
+        display: flex;
+        justify-content: center;
       }
       #root {
         width: 100%;
         max-width: 430px;
         min-height: 100vh;
-        margin: 0 auto;
         background: white;
+        box-shadow: 0 0 40px rgba(0,0,0,0.05);
       }
       .premium-gradient {
         background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
@@ -40,7 +42,7 @@
       .service-card:active {
         transform: scale(0.96);
       }
-      /* Hide scrollbar */
+      /* Hide scrollbar for mobile clean look */
       ::-webkit-scrollbar { display: none; }
     </style>
   <script type="importmap">
