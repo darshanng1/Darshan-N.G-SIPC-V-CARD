@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CARD_DETAILS, ICONS } from '../constants';
 
@@ -23,13 +22,13 @@ END:VCARD`;
   };
 
   return (
-    <div className="px-6 mb-10">
+    <div className="px-8 mb-12">
       <button
         onClick={handleSave}
-        className="w-full bg-white text-slate-900 border-2 border-slate-100 font-black py-4 rounded-2xl flex items-center justify-center space-x-3 shadow-sm hover:bg-slate-50 transition-all active:scale-95"
+        className="w-full bg-[#0F172A] text-white font-bold py-4 rounded-2xl flex items-center justify-center space-x-3 shadow-lg active:scale-[0.98] transition-all"
       >
         <ICONS.Download />
-        <span className="text-[10px] uppercase tracking-[0.2em]">Add to Phonebook</span>
+        <span className="text-xs uppercase tracking-[0.15em]">Save Contact</span>
       </button>
     </div>
   );

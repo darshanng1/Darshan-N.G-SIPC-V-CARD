@@ -1,23 +1,24 @@
-
 import React from 'react';
 import { SERVICES } from '../constants';
 
 const Services: React.FC = () => {
   return (
-    <section className="px-6 mb-10">
-      <div className="flex items-center justify-between mb-6 px-1">
-        <h3 className="text-lg font-extrabold text-slate-900 tracking-tight">Our Expertise & Solutions</h3>
-        <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded-md uppercase tracking-widest">Premium Care</span>
-      </div>
-      
-      <div className="grid grid-cols-2 gap-4">
+    <section className="px-8 mb-10">
+      <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-6 border-b border-slate-200 pb-2">
+        Professional Services
+      </h2>
+      <div className="service-grid">
         {SERVICES.map((service) => (
           <div 
             key={service.id} 
-            className="glass-card service-card p-5 rounded-3xl transition-all duration-300 flex flex-col items-start"
+            className="bg-white p-5 rounded-2xl border border-slate-100 premium-shadow flex flex-col items-center text-center"
           >
-            <span className="text-3xl mb-3 block transform hover:scale-125 transition-transform">{service.icon}</span>
-            <h4 className="text-xs font-black text-slate-800 uppercase tracking-tight leading-tight">{service.title}</h4>
+            <div className="text-blue-600 mb-3 opacity-90">
+              {service.icon}
+            </div>
+            <h3 className="text-[10px] font-extrabold text-[#0F172A] uppercase tracking-tight leading-tight">
+              {service.title}
+            </h3>
           </div>
         ))}
       </div>

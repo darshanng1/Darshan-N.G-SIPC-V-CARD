@@ -1,17 +1,13 @@
-
 import React from 'react';
 import { CARD_DETAILS } from '../constants';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="px-6 pb-12 text-center">
-      <div className="bg-gray-100 rounded-2xl p-4 text-xs text-gray-500 space-y-2 mb-6">
-        <p className="font-bold text-gray-600">SALES COORDINATION PAGE</p>
-        <p>This is a personal digital business card for professional sales coordination only. All copyrights and company logos belong to {CARD_DETAILS.company}.</p>
+    <footer className="px-8 mt-4 text-center">
+      <div className="bg-slate-50 rounded-2xl p-6 text-[10px] text-slate-400 font-medium leading-relaxed uppercase tracking-[0.1em]">
+        <p className="mb-2 text-slate-500 font-bold">Sales Coordination Page</p>
+        <p>© {new Date().getFullYear()} SIPC Solutions. All rights reserved.</p>
       </div>
-      <p className="text-gray-400 text-[10px] uppercase tracking-widest font-medium">
-        &copy; {new Date().getFullYear()} SIPC Solutions - Darshan N G
-      </p>
     </footer>
   );
 };
