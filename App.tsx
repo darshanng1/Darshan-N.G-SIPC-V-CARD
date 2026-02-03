@@ -6,36 +6,38 @@ import ActionButtons from './components/ActionButtons';
 import SaveContact from './components/SaveContact';
 import ContactInfo from './components/ContactInfo';
 import Footer from './components/Footer';
+import SectionReveal from './components/SectionReveal';
 
 const App: React.FC = () => {
   return (
-    <div className="flex flex-col bg-white min-h-screen">
-      {/* Section 1: Hero (Authority First) */}
+    <div className="flex flex-col bg-white min-h-screen relative pb-32">
+      {/* Section 1: Hero with Parallax & Motion */}
       <Header />
       
       <main className="flex-1">
-        {/* Section 2: Trust Strip */}
+        {/* Section 2: Trust Strip with Floating Icons */}
         <TrustStrip />
         
-        {/* Section 3: Core Pest Services */}
+        {/* Section 3: Core Pest Services Grid */}
         <Services />
         
-        {/* Section 4 & 5: Actions Area with Premium Depth */}
-        <div className="relative pt-4 pb-4">
-          <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-slate-50/50 to-transparent pointer-events-none"></div>
-          
-          <ActionButtons />
-          
-          {/* Section 6: Save Contact */}
-          <SaveContact />
-        </div>
-        
-        {/* Subordinate Details */}
-        <div className="bg-slate-50/50 border-t border-slate-100 py-12">
+        {/* Supporting Contact Details */}
+        <SectionReveal className="px-8 mb-8">
           <ContactInfo />
+        </SectionReveal>
+        
+        {/* Section 6: Save Contact */}
+        <SectionReveal className="px-8 mb-12">
+          <SaveContact />
+        </SectionReveal>
+        
+        <SectionReveal className="pb-10">
           <Footer />
-        </div>
+        </SectionReveal>
       </main>
+
+      {/* Section 5: Sticky Action Bar */}
+      <ActionButtons />
     </div>
   );
 };
