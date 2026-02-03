@@ -3,22 +3,26 @@ import { SERVICES } from '../constants';
 
 const Services: React.FC = () => {
   return (
-    <section className="px-8 mb-10">
-      <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-6 border-b border-slate-200 pb-2">
-        Professional Services
-      </h2>
-      <div className="service-grid">
+    <section className="px-8 py-12">
+      <div className="flex items-center justify-between mb-8">
+        <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">
+          Core Solutions
+        </h3>
+        <div className="h-px flex-1 bg-slate-100 ml-4"></div>
+      </div>
+      
+      <div className="grid grid-cols-2 gap-4">
         {SERVICES.map((service) => (
           <div 
             key={service.id} 
-            className="bg-white p-5 rounded-2xl border border-slate-100 premium-shadow flex flex-col items-center text-center"
+            className="service-card bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center text-center"
           >
-            <div className="text-blue-600 mb-3 opacity-90">
+            <div className="mb-4 bg-blue-50/50 p-4 rounded-2xl">
               {service.icon}
             </div>
-            <h3 className="text-[10px] font-extrabold text-[#0F172A] uppercase tracking-tight leading-tight">
+            <h4 className="text-[10px] font-black text-[#0F172A] uppercase tracking-tight leading-tight">
               {service.title}
-            </h3>
+            </h4>
           </div>
         ))}
       </div>

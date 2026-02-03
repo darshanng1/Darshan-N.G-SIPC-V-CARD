@@ -22,13 +22,13 @@ END:VCARD`;
   };
 
   return (
-    <div className="px-8 mb-12">
+    <div className="px-8 mb-14">
       <button
         onClick={handleSave}
-        className="w-full bg-[#0F172A] text-white font-bold py-4 rounded-2xl flex items-center justify-center space-x-3 shadow-lg active:scale-[0.98] transition-all"
+        className="w-full bg-[#0F172A] text-white/90 font-bold py-4 rounded-2xl flex items-center justify-center space-x-3 transition-all active:scale-[0.98]"
       >
-        <ICONS.Download />
-        <span className="text-xs uppercase tracking-[0.15em]">Save Contact</span>
+        <ICONS.Download className="text-blue-400" />
+        <span className="text-[11px] font-bold uppercase tracking-[0.2em]">Save SIPC Contact</span>
       </button>
     </div>
   );

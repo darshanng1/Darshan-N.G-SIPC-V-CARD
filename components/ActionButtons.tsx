@@ -3,26 +3,30 @@ import { CARD_DETAILS, WHATSAPP_PREFILLED, ICONS } from '../constants';
 
 const ActionButtons: React.FC = () => {
   const actions = [
-    { label: 'Call', icon: <ICONS.Phone />, href: `tel:${CARD_DETAILS.phone.replace(/\s+/g, '')}` },
-    { label: 'WhatsApp', icon: <ICONS.WhatsApp />, href: WHATSAPP_PREFILLED(`Hi Darshan, I'd like to discuss SIPC Pest Control services.`) },
-    { label: 'Email', icon: <ICONS.Mail />, href: `mailto:${CARD_DETAILS.email}` },
-    { label: 'Website', icon: <ICONS.Globe />, href: `https://${CARD_DETAILS.website}` }
+    { label: 'Call SIPC', icon: <ICONS.Phone />, href: `tel:${CARD_DETAILS.phone.replace(/\s+/g, '')}`, primary: true },
+    { label: 'WhatsApp SIPC', icon: <ICONS.WhatsApp />, href: WHATSAPP_PREFILLED(`Hi Darshan, I need to discuss a pest control requirement with SIPC.`), primary: false },
+    { label: 'Email SIPC', icon: <ICONS.Mail />, href: `mailto:${CARD_DETAILS.email}`, primary: false },
+    { label: 'Visit Website', icon: <ICONS.Globe />, href: `https://${CARD_DETAILS.website}`, primary: false }
   ];
 
   return (
-    <div className="grid grid-cols-4 gap-4 px-8 mb-10">
+    <div className="px-8 space-y-3 mb-10">
       {actions.map((action, idx) => (
         <a
           key={idx}
           href={action.href}
-          target={action.label === 'Website' || action.label === 'WhatsApp' ? '_blank' : undefined}
+          target={action.label.includes('Website') || action.label.includes('WhatsApp') ? '_blank' : undefined}
           rel="noopener noreferrer"
-          className="flex flex-col items-center group"
+          className={`w-full flex items-center justify-center space-x-3 py-4 rounded-2xl transition-all active:scale-[0.98] ${
+            action.primary 
+            ? 'bg-blue-600 text-white shadow-xl shadow-blue-600/20 font-bold' 
+            : 'bg-white text-slate-900 border border-slate-200 font-semibold'
+          }`}
         >
-          <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[#0F172A] premium-shadow group-active:scale-90 transition-all border border-slate-100 mb-2">
+          <div className={action.primary ? 'text-white' : 'text-blue-600'}>
             {action.icon}
           </div>
-          <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+          <span className="text-[11px] font-bold uppercase tracking-[0.15em]">
             {action.label}
           </span>
         </a>

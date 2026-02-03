@@ -3,39 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Darshan N G | SIPC Pest Control</title>
+    <title>SIPC | Professional Pest Management</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
+      :root {
+        --brand-deep: #0F172A;
+        --brand-blue: #1E40AF;
+        --accent-blue: #3B82F6;
+      }
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #F8FAFC;
-        color: #0F172A;
+        background-color: #FFFFFF;
         margin: 0;
         padding: 0;
-        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
       }
-      .premium-shadow {
-        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      #root {
+        width: 100%;
+        max-width: 430px;
+        min-height: 100vh;
+        margin: 0 auto;
+        background: white;
       }
-      .service-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+      .premium-gradient {
+        background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
       }
-      /* Custom scrollbar for subtle feel */
-      ::-webkit-scrollbar {
-        width: 4px;
+      .font-heading {
+        font-family: 'Plus Jakarta Sans', sans-serif;
       }
-      ::-webkit-scrollbar-track {
-        background: transparent;
+      .service-card {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      ::-webkit-scrollbar-thumb {
-        background: #E2E8F0;
-        border-radius: 10px;
+      .service-card:active {
+        transform: scale(0.96);
       }
+      /* Hide scrollbar */
+      ::-webkit-scrollbar { display: none; }
     </style>
   <script type="importmap">
 {
