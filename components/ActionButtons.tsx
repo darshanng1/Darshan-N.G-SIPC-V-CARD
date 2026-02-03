@@ -5,43 +5,43 @@ import { CARD_DETAILS, WHATSAPP_PREFILLED, ICONS } from '../constants';
 const ActionButtons: React.FC = () => {
   const actions = [
     {
-      label: 'Call Now',
+      label: 'Call',
       icon: <ICONS.Phone />,
       href: `tel:${CARD_DETAILS.phone.replace(/\s+/g, '')}`,
-      color: 'bg-blue-600 text-white',
+      color: 'bg-blue-600',
     },
     {
-      label: 'WhatsApp',
+      label: 'Chat',
       icon: <ICONS.MessageCircle />,
-      href: WHATSAPP_PREFILLED(`Hi Darshan, I'm reaching out regarding SIPC pest control services.`),
-      color: 'bg-green-600 text-white',
+      href: WHATSAPP_PREFILLED(`Hi Darshan, I need a consultation for SIPC Pest Control services.`),
+      color: 'bg-green-600',
     },
     {
       label: 'Email',
       icon: <ICONS.Mail />,
       href: `mailto:${CARD_DETAILS.email}`,
-      color: 'bg-gray-800 text-white',
+      color: 'bg-slate-800',
     },
     {
-      label: 'Website',
+      label: 'Web',
       icon: <ICONS.Globe />,
       href: `https://${CARD_DETAILS.website}`,
-      color: 'bg-indigo-600 text-white',
+      color: 'bg-indigo-700',
     }
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-4 px-6 -mt-12 mb-8 relative z-10">
+    <div className="grid grid-cols-4 gap-3 px-6 -mt-10 mb-10 relative z-20">
       {actions.map((action, idx) => (
         <a
           key={idx}
           href={action.href}
-          target={action.label === 'Website' || action.label === 'WhatsApp' ? '_blank' : undefined}
+          target={action.label === 'Web' || action.label === 'Chat' ? '_blank' : undefined}
           rel="noopener noreferrer"
-          className={`${action.color} flex flex-col items-center justify-center p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform active:scale-95 duration-200`}
+          className={`${action.color} text-white aspect-square flex flex-col items-center justify-center rounded-2xl shadow-xl hover:scale-105 active:scale-95 transition-all`}
         >
-          <div className="mb-2">{action.icon}</div>
-          <span className="text-xs font-bold uppercase tracking-wider">{action.label}</span>
+          <div className="mb-1">{action.icon}</div>
+          <span className="text-[9px] font-black uppercase tracking-widest">{action.label}</span>
         </a>
       ))}
     </div>

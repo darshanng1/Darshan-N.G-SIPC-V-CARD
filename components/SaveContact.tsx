@@ -3,7 +3,7 @@ import React from 'react';
 import { CARD_DETAILS, ICONS } from '../constants';
 
 const SaveContact: React.FC = () => {
-  const handleSaveContact = () => {
+  const handleSave = () => {
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${CARD_DETAILS.name}
@@ -12,28 +12,24 @@ TITLE:${CARD_DETAILS.designation}
 TEL;TYPE=CELL:${CARD_DETAILS.phone}
 EMAIL:${CARD_DETAILS.email}
 URL:https://${CARD_DETAILS.website}
-ADR;TYPE=WORK:;;${CARD_DETAILS.address.building}, ${CARD_DETAILS.address.estate};${CARD_DETAILS.address.area};Bengaluru;560016;India
 END:VCARD`;
-
     const blob = new Blob([vcard], { type: 'text/vcard' });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', `${CARD_DETAILS.name.replace(/\s+/g, '_')}_SIPC.vcf`);
-    document.body.appendChild(link);
+    link.download = `${CARD_DETAILS.name.replace(/\s+/g, '_')}_SIPC.vcf`;
     link.click();
-    document.body.removeChild(link);
     window.URL.revokeObjectURL(url);
   };
 
   return (
-    <div className="px-6 mb-8 relative z-20">
+    <div className="px-6 mb-10">
       <button
-        onClick={handleSaveContact}
-        className="w-full bg-white text-blue-700 border-2 border-blue-600 font-bold py-4 rounded-2xl flex items-center justify-center space-x-3 shadow-md hover:bg-blue-50 transition-colors active:scale-[0.98]"
+        onClick={handleSave}
+        className="w-full bg-white text-slate-900 border-2 border-slate-100 font-black py-4 rounded-2xl flex items-center justify-center space-x-3 shadow-sm hover:bg-slate-50 transition-all active:scale-95"
       >
         <ICONS.Download />
-        <span>Save to Contacts</span>
+        <span className="text-[10px] uppercase tracking-[0.2em]">Add to Phonebook</span>
       </button>
     </div>
   );

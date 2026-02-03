@@ -2,38 +2,60 @@
 import React from 'react';
 import Header from './components/Header';
 import ActionButtons from './components/ActionButtons';
+import Services from './components/Services';
 import ContactInfo from './components/ContactInfo';
 import ServiceForm from './components/ServiceForm';
 import Footer from './components/Footer';
 import SaveContact from './components/SaveContact';
+import { CARD_DETAILS, ICONS } from './constants';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen max-w-md mx-auto bg-slate-50 relative pb-4">
-      {/* Decorative background circle */}
-      <div className="absolute top-0 left-0 w-full h-96 bg-blue-900/5 -z-0 rounded-full blur-3xl transform -translate-y-1/2"></div>
+    <div className="min-h-screen max-w-lg mx-auto bg-slate-50 pb-8 flex flex-col">
+      <Header />
       
-      <main className="relative z-10 flex flex-col">
-        <Header />
+      <main className="flex-1 -mt-5">
         <ActionButtons />
         <SaveContact />
         
-        <div className="flex-1">
-          <ContactInfo />
-          <ServiceForm />
-        </div>
+        <Services />
         
-        <Footer />
+        {/* Trust Stats Bar */}
+        <div className="px-6 mb-10">
+          <div className="bg-slate-900 text-white rounded-3xl p-6 flex justify-around items-center shadow-2xl">
+            <div className="text-center">
+              <div className="text-xl font-black text-blue-400">100%</div>
+              <div className="text-[8px] font-bold uppercase tracking-widest text-slate-400">Effective</div>
+            </div>
+            <div className="h-8 w-px bg-white/10"></div>
+            <div className="text-center">
+              <div className="text-xl font-black text-blue-400">SIPC</div>
+              <div className="text-[8px] font-bold uppercase tracking-widest text-slate-400">Trusted</div>
+            </div>
+            <div className="h-8 w-px bg-white/10"></div>
+            <div className="text-center">
+              <div className="text-xl font-black text-blue-400">24/7</div>
+              <div className="text-[8px] font-bold uppercase tracking-widest text-slate-400">Support</div>
+            </div>
+          </div>
+        </div>
+
+        <ContactInfo />
+        <ServiceForm />
       </main>
       
-      {/* Floating Action for Mobile Accessibility */}
-      <div className="fixed bottom-6 right-6 z-50 md:hidden">
-        <a 
-          href={`tel:9686407061`}
-          className="bg-blue-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center animate-soft-pulse hover:scale-110 active:scale-95 transition-all"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </a>
+      <Footer />
+      
+      {/* Dynamic CTA Bar for Mobile View */}
+      <div className="fixed bottom-0 left-0 w-full p-4 z-[100] md:hidden pointer-events-none">
+        <div className="max-w-md mx-auto flex justify-end pointer-events-auto">
+          <a 
+            href={`tel:9686407061`}
+            className="bg-blue-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all border-4 border-white"
+          >
+            <ICONS.Phone />
+          </a>
+        </div>
       </div>
     </div>
   );

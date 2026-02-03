@@ -1,32 +1,29 @@
 
 import React from 'react';
-import { CARD_DETAILS, VALUE_STATEMENT, ICONS } from '../constants';
+import { CARD_DETAILS, ICONS } from '../constants';
 
 const Header: React.FC = () => {
   return (
-    <div className="vcard-gradient text-white pt-12 pb-24 px-6 rounded-b-[3rem] shadow-xl relative overflow-hidden">
-      <div className="absolute top-0 right-0 p-8 opacity-10">
+    <header className="sipc-gradient text-white pt-16 pb-28 px-8 relative overflow-hidden rounded-b-[40px] shadow-2xl">
+      <div className="absolute top-0 right-0 p-12 opacity-5 scale-150 transform translate-x-1/4 -translate-y-1/4">
         <ICONS.Shield />
       </div>
       
-      <div className="flex flex-col items-center text-center">
-        <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mb-6 backdrop-blur-md border border-white/30">
-          <ICONS.User />
+      <div className="relative z-10">
+        <div className="flex items-center mb-6">
+          <div className="h-1 bg-blue-400 w-12 rounded-full mr-3"></div>
+          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-200">Official Sales Partner</span>
         </div>
         
-        <h1 className="text-3xl font-bold mb-1 tracking-tight">{CARD_DETAILS.name}</h1>
-        <p className="text-blue-100 font-medium text-lg mb-2">{CARD_DETAILS.designation}</p>
-        <p className="text-blue-200 text-sm font-semibold mb-6 px-4 py-1 bg-white/10 rounded-full backdrop-blur-sm">
-          {CARD_DETAILS.company}
-        </p>
+        <h1 className="text-4xl font-extrabold mb-1 tracking-tight leading-none">{CARD_DETAILS.name}</h1>
+        <p className="text-blue-300 font-bold text-lg mb-4 opacity-90">{CARD_DETAILS.designation}</p>
         
-        <div className="max-w-xs">
-          <p className="text-white/80 text-sm italic border-t border-white/20 pt-4 mt-2">
-            "{VALUE_STATEMENT}"
-          </p>
+        <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/10 rounded-xl backdrop-blur-md border border-white/20">
+          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          <span className="text-xs font-bold tracking-wide">{CARD_DETAILS.company}</span>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
