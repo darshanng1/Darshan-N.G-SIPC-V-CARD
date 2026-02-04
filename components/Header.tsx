@@ -22,6 +22,7 @@ const Header: React.FC = () => {
         <div className="absolute top-[-10%] left-[-20%] w-[100%] h-[100%] bg-blue-600/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-[-10%] right-[-20%] w-[100%] h-[100%] bg-blue-400/5 rounded-full blur-3xl"></div>
       </div>
+<<<<<<< HEAD
 
       {/* Hero Content with Staggered Reveal */}
       <div className="relative z-10 space-y-2">
@@ -30,6 +31,13 @@ const Header: React.FC = () => {
             {CARD_DETAILS.company}
           </h2>
         </div>
+=======
+      
+      <div className="relative z-10">
+        <div className="flex items-center mb-6">
+          <div className="h-1 bg-blue-400 w-12 rounded-full mr-3"></div>
+            </div>
+>>>>>>> ui-redesign
         
         <div className="animate-reveal [animation-delay:120ms]">
           <p className="text-slate-400 text-[10px] font-medium tracking-[0.1em] mb-12 opacity-80 uppercase italic">
